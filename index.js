@@ -1,6 +1,10 @@
 var WPAPI = require("wpapi");
 require("dotenv").config();
-var wp = new WPAPI({ endpoint: "https://comidoc.com/wp-json" });
+var wp = new WPAPI({
+  endpoint: "https://comidoc.com/wp-json",
+  username: process.env.WP_LOGIN,
+  password: process.env.WP_PASSWORD
+});
 
 const discover = async () => {
   const apiPromise = await WPAPI.discover("https://comidoc.com");
