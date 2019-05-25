@@ -7,21 +7,30 @@ var wp = new WPAPI({
 });
 
 const discover = async () => {
-  const apiPromise = await WPAPI.discover("https://comidoc.com");
-  console.log(apiPromise);
+  try {
+    const apiPromise = await WPAPI.discover("https://comidoc.com");
+    console.log(apiPromise);
+  } catch (err) {
+    console.log("Discover Error", err);
+  }
 };
 
 const post = async () => {
-  const rest = await wp.posts().create({
-    // "title" and "content" are the only required properties
-    title: "25 may 2019 : Udemy Free courses & coupons",
-    content: "Your post content",
-    // Post will be created as a draft by default if a specific "status"
-    // is not specified
-    status: "publish"
-  });
-  console.log(res);
+  try {
+    const rest = await wp.posts().create({
+      // "title" and "content" are the only required properties
+      title: "25 may 2019 : Udemy Free courses & coupons",
+      content: "Your post content",
+      // Post will be created as a draft by default if a specific "status"
+      // is not specified
+      status: "publish"
+    });
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-console.log(process.env.WP_LOGIN, process.env.WP_PASSWORD);
-//post();
+//console.log(process.env.WP_LOGIN, process.env.WP_PASSWORD);
+post();
+//discover();
