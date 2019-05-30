@@ -31,12 +31,12 @@ const post = async () => {
   }
 };
 
-// TODO: Thumbnail
+// TODO: Featured Thumbnail
 // TODO: Excerpt
-// TODO: 4 images
+// TODO: Gallery images (3)
 // TODO: Button avec lien affilié
 // TODO: Catégorie UDEMY
 
 //console.log(process.env.WP_LOGIN, process.env.WP_PASSWORD);
-post();
+//post();
 //discover();
